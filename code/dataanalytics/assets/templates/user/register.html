@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+{% block userblock %}
+
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CyberCrime</title>
+    <style>
+        .any{
+     position: absolute;
+    top:200px;
+    left:340px;
+    padding:5px;
+    height:100%;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    }
+    .any table{
+    width:30em;
+
+    text-align:center;
+
+    border-spacing:1px;
+
+}
+
+
+.any table tr th{
+background:rgba(100, 0, 152,0.5);
+padding:5px;
+}
+.any table tr td{
+background:rgba(0, 0, 155,0.5);
+padding:5px;
+}
+.any table tr:hover td{
+background:rgba(0, 0, 10);
+}
+
+body{
+ background: url("{% static '123.jpg' %}");
+ background-size: cover;
+}
+
+
+
+.marquee{
+margin-top:160px;
+}
+
+    </style>
+</head>
+<body>
+<div id="bg"></div>
+<h1 style="color:white;position:center"> A DATA ANALYTICS APPROACH TO THE CYBERCRIME UNDERGROUND ECONOMY </h1>
+<div class="any">
+
+<form method="post" autocomplete="off">
+
+    {% csrf_token %}
+<table aria-expanded="true">
+    <tr>
+        <td style="color:white"><label>First Name</label></td>
+
+        <td style="color:white">{{form.firstname}}</td>
+    </tr><tr>
+        <td style="color:white"><label>Last Name</label></td>
+
+        <td style="color:white">{{form.lastname}}</td>
+    </tr><tr>
+        <td style="color:white"><label>User ID/Name</label></td>
+
+        <td style="color:white">{{form.userid}}</td>
+    </tr><tr>
+    <td style="color:white"><label>Password</label></td>
+
+        <td>{{form.password}} </td>
+    </tr><tr>
+        <td style="color:white"><label>MobileNumber</label></td>
+
+        <td>{{form.mobilenumber}}</td>
+    </tr><tr>
+        <td style="color:white"><label>Email Id</label></td>
+
+        <td>{{form.emailid}}</td>
+    </tr><tr>
+        <td style="color:white"><label>Gender</label></td>
+
+        <td>{{form.gender}}</td>
+    </tr><tr>
+        <td style="color:white"><label>dob</label></td>
+
+        <td>{{form.dob}}</td>
+    </tr><tr>
+        <td style="color:white"><label>age</label></td>
+
+        <td style="color:white">{{form.age}}</td>
+    </tr>
+    <tr>
+        <td colspan="3" style="text-align:center"><input type="submit" name="submit" value="submit"><br></td>
+    </tr>
+</table>
+</form>
+</div>
+{% endblock %}
+</body>
+</html>
+
